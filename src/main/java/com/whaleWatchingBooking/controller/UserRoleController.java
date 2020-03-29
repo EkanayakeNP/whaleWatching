@@ -1,6 +1,5 @@
 package com.whaleWatchingBooking.controller;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,46 +15,28 @@ import com.whaleWatchingBooking.service.UserRoleService;
 
 @RestController
 public class UserRoleController {
- 
-	
-	  @Autowired 
-	  private TestService testService;
-	 
-	  @Autowired
-	  private UserRoleService userRoleService;
-	  
-	  
-	  @RequestMapping(method=RequestMethod.POST,value="/addUserRole")
-	  public void addUserRole(@RequestBody UserRole userRole ) {
-		  userRoleService.addUserRole(userRole);
-		  
-	  }
-	  
-	  
-	
-	
-	/*
-	 * @RequestMapping("/test") public void getAllTest(){ List<Test> test = new
-	 * ArrayList<Test>(); test = testService.getAllTest();
-	 * 
-	 * for(Test t:test) {
-	 * 
-	 * System.out.println("id:"+t.getId()); System.out.println("id:"+t.getName()); }
-	 * 
-	 * }
-	 */
-	
-	@RequestMapping("/getTest")
-	public List<Test> getAllTest()
-	{
-		return testService.getAllTest();
-		 //return Arrays.asList( new Test("s1","Test"));
-		
+
+	@Autowired
+	private TestService testService;
+
+	@Autowired
+	private UserRoleService userRoleService;
+
+	@RequestMapping(method = RequestMethod.POST, value = "/addUserRole")
+	public void addUserRole(@RequestBody UserRole userRole) {
+		userRoleService.addUserRole(userRole);
+
 	}
-	
-	@RequestMapping(method=RequestMethod.POST,value="/addTestData")
+
+	@RequestMapping("/getTest")
+	public List<Test> getAllTest() {
+		return testService.getAllTest();
+
+	}
+
+	@RequestMapping(method = RequestMethod.POST, value = "/addTestData")
 	public void addTest(@RequestBody Test test) {
 		testService.addTest(test);
 	}
-	
+
 }

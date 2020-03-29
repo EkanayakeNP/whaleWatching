@@ -1,6 +1,8 @@
 package com.whaleWatchingBooking.model;
 
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,20 +12,41 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "user_role",schema = "whale_watching")
+@Table(name = "user_role")
 public class UserRole {
 	
 	@Id
-	@Column(name="roleId")
+	@Column(name="role_id")
 	private String roleId;
+	
 	@Column(name="description")
 	private String description;	
+	
 	@Column(name="ent_user")
 	private String entUser;	
+	
 	@Column(name="mod_user")
 	private String modUser;
 	
+	@Column(name="ent_date")
+	private Date entDate;
 	
+	@Column(name="mod_date")
+	private Date modDate;
+	 	
+	
+	public Date getEntDate() {
+		return entDate;
+	}
+	public void setEntDate(Date entDate) {
+		this.entDate = entDate;
+	}
+	public Date getModDate() {
+		return modDate;
+	}
+	public void setModDate(Date modDate) {
+		this.modDate = modDate;
+	}
 	public String getRoleId() {
 		return roleId;
 	}
