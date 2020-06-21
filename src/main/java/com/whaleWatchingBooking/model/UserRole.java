@@ -17,7 +17,7 @@ public class UserRole {
 	
 	@Id
 	@Column(name="role_id")
-	private String roleId;
+	private long roleId;
 	
 	@Column(name="description")
 	private String description;	
@@ -47,10 +47,10 @@ public class UserRole {
 	public void setModDate(Date modDate) {
 		this.modDate = modDate;
 	}
-	public String getRoleId() {
+	public long getRoleId() {
 		return roleId;
 	}
-	public void setRoleId(String roleId) {
+	public void setRoleId(long roleId) {
 		this.roleId = roleId;
 	}
 	public String getDescription() {
